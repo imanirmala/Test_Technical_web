@@ -45,7 +45,7 @@ Route::get('/', function () {
 });
 
 Route::resource('jenis','JenisBarangController');
-Route::resource('jurusan','jurusanController');
+Route::resource('barang','BarangController');
 
 
 

@@ -8,7 +8,7 @@
     <div class="col-md-12 col-sm-12 ">
       <div class="x_panel">
         <div class="x_title">
-          <h2>Tabel Jurusan</h2>
+          <h2>Tabel barang</h2>
           <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
             </li>
@@ -27,7 +27,7 @@
         </div>
         <div class="x_content">
 
-          <a href="{{ route('jurusan.create') }}" class="btn btn-success"><i class="fa fa-plus"></i></a>
+          <a href="{{ route('barang.create') }}" class="btn btn-success"><i class="fa fa-plus"></i></a>
             <div class="row">
                 <div class="col-sm-12">
                   <div class="card-box table-responsive">
@@ -35,22 +35,22 @@
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Nama Jurusan</th>
-                          <th>Nama Fakultas</th>
+                          <th>Jenis Barang</th>
+                          <th>Nama Barang</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
                         @php $no = 1; @endphp
-                        @foreach($data as $dataJur)
+                        @foreach($data as $d)
                         <tr>
                           <td>{{ $no++ }}</td>
-                          <td>{{ $dataJur->nama_jurusan }}</td>
-                          <td>{{ $dataJur->nama_fakultas }}</td>
+                          <td>{{ $d->nama_jenis }}</td>
+                          <td>{{ $d->nama_barang }}</td>
                           <td>
-                            <a href="{{ route('jurusan.edit', $dataJur->id_jur) }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                            <a href="{{ route('barang.edit', $d->id_barang) }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
 
-                            <form method="post" action="{{ route('jurusan.destroy', $dataJur->id_jur) }}">
+                            <form method="post" action="{{ route('barang.destroy', $d->id_barang) }}">
                               @csrf
                               @method('DELETE')
                               

@@ -68,7 +68,7 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a href="{{ route('jenis.index') }}"><i class="fa fa-home"></i> Jenis Barang </a></li>
-                  <li><a href="{{ route('jurusan.index') }}"><i class="fa fa-edit"></i> Barang </a></li>
+                  <li><a href="{{ route('barang.index') }}"><i class="fa fa-edit"></i> Barang </a></li>
                   <li><a><i class="fa fa-desktop"></i> Data Transaksi </a></li>
                   
                 </ul>
