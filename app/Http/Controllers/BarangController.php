@@ -23,12 +23,13 @@ class BarangController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     *p
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $dataJenis = DB::table('jenis_barangs')->get();
+        return view('barang.create',compact('dataJenis'));
     }
 
     /**

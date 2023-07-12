@@ -26,13 +26,13 @@
   </div>
   <div class="x_content">
     <br/>
-    <form class="form-horizontal form-label-left" method="post" action="{{ route('jurusan.store') }}">
+    <form class="form-horizontal form-label-left" method="post" action="{{ route('barang.store') }}">
     	@csrf
       <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Fakultas</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-3">Jenis Barang</label>
         <div class="col-md-9 col-sm-9 col-xs-9">
           <select class="form-control" name="id_fak_fk">
-            @foreach($dataFak as $dataFaks)
+            @foreach($dataJenis as $data)
               <option value="{{ $dataFaks->id_fak }}">{{ $dataFaks->nama_fakultas }}</option>
             @endforeach
           </select>
