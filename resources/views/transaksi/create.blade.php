@@ -8,7 +8,7 @@
 <div class="col-md-12 col-sm-12  ">
 <div class="x_panel">
   <div class="x_title">
-    <h2>Form Edit Barang</h2>
+    <h2>Form Transaksi</h2>
     <ul class="nav navbar-right panel_toolbox">
       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
       </li>
@@ -26,29 +26,22 @@
   </div>
   <div class="x_content">
     <br/>
-    <form class="form-horizontal form-label-left" method="post" action="{{ route('barang.update', $dataBarang->id_barang) }}">
-      @method('PUT')
+    <form class="form-horizontal form-label-left" method="post" action="{{ route('transaksi.store') }}">
     	@csrf
       <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Fakultas</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Barang</label>
         <div class="col-md-9 col-sm-9 col-xs-9">
-          <select class="form-control" name="id_jenis">
-            @foreach($dataJenis as $data)
-              <option value="{{ $data->id_jenis }}" @if( $dataBarang->id_jenis == $data->id_jenis) selected="" @endif>{{ $data->nama_jenis }}</option>
+          <select class="form-control" name="id_barang">
+            @foreach($dataBarang as $data)
+              <option value="{{ $data->id_barang }}">{{ $data->nama_barang }}</option>
             @endforeach
           </select>
         </div>
       </div>
       <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Barang</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-3">Jumlah Terjual</label>
         <div class="col-md-9 col-sm-9 col-xs-9">
-          <input type="text" class="form-control" name="nama_barang" autocomplete="off" autofocus="" required="" value="{{ $dataBarang->nama_barang }}">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Stok Barang</label>
-        <div class="col-md-9 col-sm-9 col-xs-9">
-          <input type="text" class="form-control" name="stok" autocomplete="off" autofocus="" required="" value="{{ $dataBarang->stok }}">
+          <input type="text" class="form-control" name="jmlh_jual" autocomplete="off" autofocus="" required="">
         </div>
       </div>
       <div class="ln_solid"></div>

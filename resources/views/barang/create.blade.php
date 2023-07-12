@@ -8,7 +8,7 @@
 <div class="col-md-12 col-sm-12  ">
 <div class="x_panel">
   <div class="x_title">
-    <h2>Tambah Jurusan</h2>
+    <h2>Form Add Barang</h2>
     <ul class="nav navbar-right panel_toolbox">
       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
       </li>
@@ -42,6 +42,12 @@
         <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Barang</label>
         <div class="col-md-9 col-sm-9 col-xs-9">
           <input type="text" class="form-control" name="nama_barang" autocomplete="off" autofocus="" required="">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label col-md-3 col-sm-3 col-xs-3">Stok Barang</label>
+        <div class="col-md-9 col-sm-9 col-xs-9">
+          <input type="text" class="form-control" name="stok" autocomplete="off" autofocus="" required="">
         </div>
       </div>
       <div class="ln_solid"></div>

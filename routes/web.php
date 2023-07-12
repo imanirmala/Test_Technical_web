@@ -13,31 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('linkCoba', function () {
-//     return view('foldercoba.coba');
-// });
-
-// Route::get('/', function () {
-//     return view('layouts.layout');
-// });
-
-
- // Route::get('linkCoba2','siswaController@index');
-// //Route::resource('linkCoba2','siswaController
-
- // Route::get('linkTest','testsController@index');
- // Route::get('tambah','testsController@create');
- // Route::post('storeData','testsController@store');
-
- // Route::get('edit/{x}','testsController@edit');
- // Route::post('/updateData/{y}','testsController@update');
-
- // Route::get('hapus/{z}','testsController@destroy');
-
 
 
 Route::get('/', function () {
@@ -45,7 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('jenis','JenisBarangController');
-Route::resource('barang','BarangController');
+Route::resource('barang','TableBarangController');
+Route::resource('transaksi','TransaksiController');
 
 
 
