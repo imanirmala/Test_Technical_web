@@ -26,23 +26,23 @@
   </div>
   <div class="x_content">
     <br/>
-    <form class="form-horizontal form-label-left" method="post" action="{{ route('jurusan.update', $dataJur->id_jur) }}">
+    <form class="form-horizontal form-label-left" method="post" action="{{ route('barang.update', $dataBarang->id_barang) }}">
       @method('PUT')
     	@csrf
       <div class="form-group row">
         <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Fakultas</label>
         <div class="col-md-9 col-sm-9 col-xs-9">
-          <select class="form-control" name="id_fak_fk">
-            @foreach($dataFak as $dataFaks)
-              <option value="{{ $dataFaks->id_fak }}" @if( $dataJur->id_fak_fk == $dataFaks->id_fak) selected="" @endif>{{ $dataFaks->nama_fakultas }}</option>
+          <select class="form-control" name="id_jenis">
+            @foreach($dataJenis as $data)
+              <option value="{{ $data->id_jenis }}" @if( $dataBarang->id_jenis == $data->id_jenis) selected="" @endif>{{ $data->nama_jenis }}</option>
             @endforeach
           </select>
         </div>
       </div>
       <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Jurusan</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Barang</label>
         <div class="col-md-9 col-sm-9 col-xs-9">
-          <input type="text" class="form-control" name="nama_jurusan" autocomplete="off" autofocus="" required="" value="{{ $dataJur->nama_jurusan }}">
+          <input type="text" class="form-control" name="nama_barang" autocomplete="off" autofocus="" required="" value="{{ $dataBarang->nama_barang }}">
         </div>
       </div>
       <div class="ln_solid"></div>

@@ -31,17 +31,17 @@
       <div class="form-group row">
         <label class="control-label col-md-3 col-sm-3 col-xs-3">Jenis Barang</label>
         <div class="col-md-9 col-sm-9 col-xs-9">
-          <select class="form-control" name="id_fak_fk">
+          <select class="form-control" name="id_jenis">
             @foreach($dataJenis as $data)
-              <option value="{{ $dataFaks->id_fak }}">{{ $dataFaks->nama_fakultas }}</option>
+              <option value="{{ $data->id_jenis }}">{{ $data->nama_jenis }}</option>
             @endforeach
           </select>
         </div>
       </div>
       <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Jurusan</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Barang</label>
         <div class="col-md-9 col-sm-9 col-xs-9">
-          <input type="text" class="form-control" name="nama_jurusan" autocomplete="off" autofocus="" required="">
+          <input type="text" class="form-control" name="nama_barang" autocomplete="off" autofocus="" required="">
         </div>
       </div>
       <div class="ln_solid"></div>

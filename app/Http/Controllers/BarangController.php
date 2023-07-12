@@ -40,7 +40,11 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('barangs')->insert([
+            'id_jenis'=> $request->id_jenis,
+            'nama_barang' => $request->nama_barang
+        ]);
+        return redirect()->route('barang.index');
     }
 
     /**
@@ -60,9 +64,11 @@ class BarangController extends Controller
      * @param  \App\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Barang $barang)
+    public function edit($id)
     {
-        //
+        $dataJenis = DB::table('jenis_barangs')->get();
+        $dataBarang = DB::table('barangs')->where('id_barang',$id)->first();
+        return view('barang.edit',compact('dataJenis','dataBarang'));
     }
 
     /**
@@ -72,9 +78,13 @@ class BarangController extends Controller
      * @param  \App\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Barang $barang)
+    public function update(Request $request, $id)
     {
-        //
+        DB::table('barangs')->where('id_barang',$id)->update([
+            'id_jenis'=> $request->id_jenis,
+            'nama_barang' => $request->nama_barang
+        ]);
+        return redirect()->route('barang.index');
     }
 
     /**
@@ -83,8 +93,9 @@ class BarangController extends Controller
      * @param  \App\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Barang $barang)
+    public function destroy($id)
     {
-        //
+        DB::table('barangs')->where('id_barang',$id)->delete();
+        return redirect()->route('barang.index');
     }
 }
