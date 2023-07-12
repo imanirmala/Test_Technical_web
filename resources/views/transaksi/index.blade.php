@@ -38,7 +38,7 @@
                           <th>Nama Barang</th>
                           <th>Stok</th>
                           <th>Jumlah Terjual</th>
-                          <th>Tanggal Transaksi</th>
+                          <!-- <th>Tanggal Transaksi</th> -->
                           <th>Jenis Barang</th>
                           <th>Aksi</th>
                         </tr>
@@ -51,7 +51,7 @@
                           <td>{{ $d->nama_barang }}</td>
                           <td>{{ $d->stok }}</td>
                           <td>{{ $d->jmlh_jual }}</td>
-                          <td>{{ $d->created_at }}</td>
+                          <!-- <td>{{ $d->created_at }}</td> -->
                           <td>{{ $d->nama_jenis }}</td>
                           <td>
                             <a href="{{ route('transaksi.edit', $d->id_transaksi) }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
